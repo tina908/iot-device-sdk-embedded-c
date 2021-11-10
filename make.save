@@ -1,0 +1,17 @@
+CC=gcc
+CFLAGS = -g -Wall
+TARGET = a.out
+OBJS=a.o main.o
+
+main.o
+	$(CC) -o $(TARGET) a.o main.o
+
+a.out : a.o main.o
+	gcc -o a.out a.o main.o
+a.o : a.c
+	gcc - c -o a.o a.c
+main.o : main.c
+	gcc -c -o main.o main.c
+clean:
+	rm *.o a.out
+
